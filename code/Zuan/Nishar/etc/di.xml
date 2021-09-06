@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Magento\Customer\Controller\Account\CreatePost" 
+                type="Zuan\Nishar\Controller\Account\CreatePost" />
+                <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+                    <arguments>
+                        <argument name="collections" xsi:type="array">
+                            <item name="table_table_listing_data_source" xsi:type="string">Zuan\Nishar\Model\ResourceModel\Form\Collection</item>
+                        </argument>
+                    </arguments>
+                </type>
+                <virtualType name="Zuan\Nishar\Model\ResourceModel\Form\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+                    <arguments>
+                        <argument name="mainTable" xsi:type="string">Nishar_Form</argument>
+                        <argument name="resourceModel" xsi:type="string">Zuan\Nishar\Model\ResourceModel\Form</argument>
+                    </arguments>
+                </virtualType>
+</config>

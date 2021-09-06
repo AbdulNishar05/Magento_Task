@@ -1,0 +1,91 @@
+<?php $value=$block->edit(); ?>
+<?php
+         ?>
+<form class="form create account form-create-account" data-mage-init='{"validation": {}}' action="<?= /* @escapeNotVerified */ $block->getActionUrl() ?>" method="post" id="form-validate" name="feedback_form" autocomplete="off">
+    <fieldset class="fieldset create info" data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>">
+       <input type="hidden" name="id" value="<?= $value->getId();?>"/>
+       
+        <div class="field required">
+            <label for="Name" class="label">
+                <span><?php /* @escapeNotVerified */ echo __('Name') ?></span>
+            </label>
+
+            <div class="control">
+                <input type="text" id="name"
+                       name="name"
+                       class="input-text"
+                       data-validate='{"required":true}'
+                       value="<?= $value->getName();?>"
+                   >
+            </div>
+
+            <label for="email" class="label">
+                <span><?php /* @escapeNotVerified */ echo __('Email') ?></span>
+            </label>
+
+            <div class="control">
+                <input type="email" id="email"
+                       name="email"
+                       class="input-text"
+                      data-validate='{"required":true}'
+                      value="<?= $value->getEmail();?>"
+
+                      >
+            </div>
+            <label for="phone" class="label">
+                <span><?php /* @escapeNotVerified */ echo __('phone') ?></span>
+            </label>
+
+            <div class="control">
+                <input type="number" id="phone"
+                       name="phone"
+                       class="input-text"
+                       data-validate='{"required":true}'
+                       value="<?= $value->getPhone();?>"
+
+                   >
+            </div>
+            <label for="gender" class="label">
+                <span><?php /* @escapeNotVerified */ echo __('gender') ?></span>
+            </label>
+            <select id="gender" name="gender" value="<?= $value->getGender();?>"
+ >
+            <option data-validate='{"required":true}'>Male</option>
+             <option data-validate='{"required":true}'>Female</option>
+           </select>
+
+           
+            <label for="address" class="label">
+                <span><?php /* @escapeNotVerified */ echo __('Address') ?></span>
+            </label>
+
+            <div class="control">
+                <input type="text"id="address" class="input-text"  data-validate='{"required":true}' name="address" value="<?= $value->getAddress();?>"> </input>
+            </div>
+        </div>
+        </div>
+
+
+
+    </fieldset>
+    <?php
+      if($value->getId())
+      {
+    ?>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action submit primary" title="<?php /* @escapeNotVerified */ echo __('Submit') ?>">
+                <span><?php /* @escapeNotVerified */ echo __('Update') ?></span>
+            </button>
+        </div>
+    </div>
+<?php } else { ?>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action submit primary" title="<?php /* @escapeNotVerified */ echo __('Submit') ?>">
+                <span><?php /* @escapeNotVerified */ echo __('Submit') ?></span>
+            </button>
+        </div>
+    </div>
+<?php  } ?>
+</form>
